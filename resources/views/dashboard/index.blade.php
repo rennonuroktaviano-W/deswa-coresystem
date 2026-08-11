@@ -422,7 +422,7 @@
 
         <div>
             <div class="brand">
-                <div class="brand-logo">S</div>
+                <div class="brand-logo">DS</div>
 
                 <div>
                     <div class="brand-title">DESWA</div>
@@ -454,7 +454,7 @@
         <div class="user-box">
 
             <div class="avatar">
-                RA
+                UD
             </div>
 
             <div>
@@ -463,7 +463,7 @@
                 </div>
 
                 <div class="user-role">
-                    MAHASISWA
+                    SISWA
                 </div>
             </div>
 
