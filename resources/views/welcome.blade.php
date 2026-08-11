@@ -119,34 +119,23 @@
             }
         }
 
-        /* Logo */
-        .logo {
-            width: 72px;
-            height: 72px;
+       .logo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 30px;
 
-            margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 
-            border-radius: 20px;
-
-            background: linear-gradient(
-                135deg,
-                #6366f1,
-                #06b6d4
-            );
-
-            box-shadow:
-                0 0 45px rgba(99, 102, 241, 0.45);
-        }
-
-        .logo span {
-            font-size: 36px;
-            font-weight: 800;
-        }
-
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.45));
+}
         /* Welcome */
         .welcome {
             text-align: center;
@@ -326,7 +315,7 @@
 
         <!-- Logo -->
         <div class="logo">
-            <span>S</span>
+             <img src="{{ asset('images/logoo.png') }}" alt="Logo">
         </div>
 
         <!-- Welcome -->
