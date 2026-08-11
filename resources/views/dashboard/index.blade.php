@@ -1508,7 +1508,7 @@ body.light-mode .app-card.primary .app-icon {
                 <div class="brand">
 
                     <div class="brand-logo">
-                        S
+                        DS
                     </div>
 
                     <div>
@@ -1580,18 +1580,18 @@ body.light-mode .app-card.primary .app-icon {
 
 
                 <div class="avatar">
-                    RA
+                    US
                 </div>
 
 
                 <div>
 
                     <div class="user-name">
-                        USER DEMO
+                        USER
                     </div>
 
                     <div class="user-role">
-                        MAHASISWA
+                        SISWA
                     </div>
 
                 </div>
