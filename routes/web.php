@@ -55,6 +55,7 @@ Route::middleware('auth')->group(function () {
         ]);
     })->name('raise');
 
+
     Route::get('/bo', function () {
         return response()->json([
             'success' => true,
@@ -62,6 +63,7 @@ Route::middleware('auth')->group(function () {
             'message' => 'Aplikasi BO berhasil diakses melalui SSO.',
         ]);
     })->name('bo');
+
 
     Route::get('/sf', function () {
         return response()->json([
@@ -74,12 +76,35 @@ Route::middleware('auth')->group(function () {
 
     /*
     |--------------------------------------------------------------------------
-    | Pra Registrasi CRUD
+    | Pra Registrasi
     |--------------------------------------------------------------------------
     */
 
+    // Halaman utama Pra Registrasi
     Route::get('/pra-registrasi', [InvestigasiController::class, 'index'])
         ->name('pra-registrasi.index');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Data JSON Pra Registrasi
+    |--------------------------------------------------------------------------
+    |
+    | PENTING:
+    | Route ini harus berada SEBELUM /pra-registrasi/{investigasi}
+    | supaya "data" tidak dianggap sebagai ID investigasi.
+    |
+    */
+
+    Route::get('/pra-registrasi/data', [InvestigasiController::class, 'data'])
+        ->name('pra-registrasi.data');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | CRUD Pra Registrasi
+    |--------------------------------------------------------------------------
+    */
 
     Route::post('/pra-registrasi', [InvestigasiController::class, 'store'])
         ->name('pra-registrasi.store');
@@ -110,7 +135,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/pra-registrasi/{investigasi}/submit', [InvestigasiController::class, 'submit'])
         ->name('pra-registrasi.submit');
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Workflow
+    |--------------------------------------------------------------------------
+    */
+
     Route::middleware('admin')->group(function () {
+
         Route::post('/pra-registrasi/{investigasi}/approve', [InvestigasiController::class, 'approve'])
             ->name('pra-registrasi.approve');
 
@@ -126,6 +159,13 @@ Route::middleware('auth')->group(function () {
     |--------------------------------------------------------------------------
     | Reference Data
     |--------------------------------------------------------------------------
+    |
+    | Digunakan frontend untuk mengambil:
+    | - Asuransi
+    | - Jenis Claim
+    | - Investigator
+    | - Mata Uang
+    |
     */
 
     Route::get('/references', [ReferenceController::class, 'index'])

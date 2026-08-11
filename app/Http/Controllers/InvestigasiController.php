@@ -12,6 +12,14 @@ class InvestigasiController extends Controller
      */
     public function index()
     {
+        return view('pra-registrasi.index');
+    }
+
+    /**
+     * Menyediakan data JSON untuk halaman Pra Registrasi.
+     */
+    public function data()
+    {
         $investigasis = Investigasi::with([
             'asuransi',
             'jenisClaim',
