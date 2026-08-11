@@ -595,7 +595,7 @@
 
                 password.type = 'password';
 
-                button.textContent = '👁';
+                button.textContent = '🐵';
 
                 button.setAttribute(
                     'aria-label',
